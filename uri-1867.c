@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int i,j,l1,l2,s1,s2,n;
+    char a[1000005],b[1000005];
+    while(1)
+    {
+        scanf("%s",a);
+        getchar();
+        scanf("%s",b);
+        l1=strlen(a);
+        l2=strlen(b);
+        s1=0;
+        s2=0;
+        if(l1==1&&l2==1&&a[0]=='0'&&b[0]=='0')
+        {
+            break;
+        }
+        for(i=0;i<l1;i++)
+        {
+            s1+=a[i]-48;
+        }
+        for(i=0;i<l2;i++)
+        {
+            s2+=b[i]-48;
+        }
+        while(s1>9)
+        {
+            n=s1;
+            s1=0;
+            while(n>0)
+            {
+                s1+=n%10;
+                n=n/10;
+            }
+        }
+        while(s2>9)
+        {
+            n=s2;
+            s2=0;
+            while(n>0)
+            {
+                s2+=n%10;
+                n=n/10;
+            }
+        }
+        if(s1>s2)
+        {
+            printf("1\n");
+        }
+        else if(s1<s2)
+        {
+            printf("2\n");
+        }
+        else
+        {
+            printf("0\n");
+        }
+    }
+    return 0;
+}

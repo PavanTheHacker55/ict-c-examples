@@ -1,0 +1,39 @@
+#include<stdio.h>
+int main()
+{
+    long long n,i,c,a,r,max,ar[10000];
+    scanf("%lld",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%lld",&a);
+        max=0;
+        c=0;
+        while(a>0)
+        {
+            r=a%2;
+            a=a/2;
+            if(r==1)
+            {
+                c++;
+            }
+            else
+            {
+                if(c>max)
+                {
+                    max=c;
+                }
+                c=0;
+            }
+        }
+        if(max<c)
+        {
+            max=c;
+        }
+        ar[i]=max;
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%lld\n",ar[i]);
+    }
+    return 0;
+}
